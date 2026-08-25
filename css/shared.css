@@ -1,0 +1,65 @@
+:root {
+    --cream: #FFF6EA;
+    --frosting: #FADCE6;
+    --raspberry: #E0507B;
+    --cherry: #C2185B;
+    --cocoa: #4A2E2A;
+    --gold: #F0A93E;
+    --font-display: 'Baloo 2', sans-serif;
+    --font-body: 'Nunito', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    min-height: 100dvh;
+    background: var(--cream);
+    color: var(--cocoa);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 90px 20px 40px;
+    text-align: center;
+    position: relative;
+  }
+
+  
+/* candle progress track — page 1 of 5 is lit */
+  .candle-track {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    padding: 16px 12px;
+    background: var(--cream);
+    z-index: 10;
+  }
+  .candle { display: flex; flex-direction: column-reverse; align-items: center; gap: 4px; }
+  .candle .stick { width: 6px; height: 16px; background: var(--frosting); border-radius: 2px; }
+  .candle.active .stick { background: var(--raspberry); }
+  .candle .flame {
+    width: 12px; height: 15px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    background: transparent;
+    border: 1.5px solid var(--cocoa);
+    opacity: .3;
+  }
+  .candle.active .flame {
+    background: var(--gold);
+    border-color: var(--gold);
+    opacity: 1;
+    animation: flicker 1.6s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .candle.active .flame { animation: none; }
+  }
+  @keyframes flicker {
+    0%, 100% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-40deg) scale(1.12); }
+  }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Make a Wish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/shared.css">
+<link rel="stylesheet" href="css/cat-cake.css">
+</head>
+<body>
+
+<nav class="candle-track" aria-label="Page 4 of 5">
+  <div class="candle"><div class="flame"></div><div class="stick"></div></div>
+  <div class="candle"><div class="flame"></div><div class="stick"></div></div>
+  <div class="candle"><div class="flame"></div><div class="stick"></div></div>
+  <div class="candle active"><div class="flame"></div><div class="stick"></div></div>
+  <div class="candle"><div class="flame"></div><div class="stick"></div></div>
+</nav>
+
+<h1 class="scene-heading">Make a wish!</h1>
+<p class="scene-sub" id="scene-sub">Press and hold the candle to blow it out</p>
+
+<button class="cat-cake-wrap" id="cat-cake-wrap" type="button" aria-label="Press and hold to blow out the candle">
+  <svg viewBox="0 0 160 210" xmlns="http://www.w3.org/2000/svg">
+    <path d="M148,150 Q172,140 168,110 Q166,95 178,90" fill="none" stroke="var(--cocoa)" stroke-opacity=".25" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- cat ears -->
+    <path d="M50,40 L38,10 L66,32 Z" fill="var(--cream)" stroke="var(--cocoa)" stroke-opacity=".25" stroke-width="1.5"/>
+    <path d="M110,40 L122,10 L94,32 Z" fill="var(--cream)" stroke="var(--cocoa)" stroke-opacity=".25" stroke-width="1.5"/>
+    <path d="M50,35 L44,18 L61,31 Z" fill="var(--frosting)"/>
+    <path d="M110,35 L116,18 L99,31 Z" fill="var(--frosting)"/>
+
+    <!-- cat head -->
+    <circle cx="80" cy="62" r="36" fill="var(--cream)" stroke="var(--cocoa)" stroke-opacity=".25" stroke-width="1.5"/>
+
+    <!-- whiskers -->
+    <path d="M50,68 L28,64 M50,74 L28,76" stroke="var(--cocoa)" stroke-opacity=".4" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M110,68 L132,64 M110,74 L132,76" stroke="var(--cocoa)" stroke-opacity=".4" stroke-width="1.2" stroke-linecap="round"/>
+
+    <!-- cheeks -->
+    <g id="cheeks">
+      <circle cx="58" cy="74" r="7" fill="var(--raspberry)" opacity=".35"/>
+      <circle cx="102" cy="74" r="7" fill="var(--raspberry)" opacity=".35"/>
+    </g>
+
+    <!-- eyes -->
+    <g id="eyes-open">
+      <ellipse cx="66" cy="58" rx="4" ry="5" fill="var(--cocoa)"/>
+      <ellipse cx="94" cy="58" rx="4" ry="5" fill="var(--cocoa)"/>
+    </g>
+    <g id="eyes-closed">
+      <path d="M60,58 Q66,52 72,58" stroke="var(--cocoa)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M88,58 Q94,52 100,58" stroke="var(--cocoa)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </g>
+
+    <!-- nose + mouth -->
+    <path d="M76,66 L84,66 L80,72 Z" fill="var(--raspberry)"/>
+    <path d="M80,72 Q80,76 74,78 M80,72 Q80,76 86,78" stroke="var(--cocoa)" stroke-opacity=".6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- paws peeking over the cake -->
+    <ellipse cx="60" cy="128" rx="10" ry="7" fill="var(--cream)" stroke="var(--cocoa)" stroke-opacity=".25" stroke-width="1.5"/>
+    <ellipse cx="100" cy="128" rx="10" ry="7" fill="var(--cream)" stroke="var(--cocoa)" stroke-opacity=".25" stroke-width="1.5"/>
+
+    <!-- cake -->
+    <ellipse cx="80" cy="188" rx="56" ry="7" fill="var(--frosting)" opacity=".6"/>
+    <rect x="24" y="146" width="112" height="36" rx="10" fill="var(--cream)" stroke="var(--cocoa)" stroke-opacity=".2" stroke-width="1.5"/>
+    <path d="M22,148 Q41,124 60,148 Q79,124 98,148 Q117,124 138,148 L138,160 L22,160 Z" fill="var(--frosting)" stroke="var(--cocoa)" stroke-opacity=".15" stroke-width="1.5"/>
+    <circle cx="42" cy="142" r="2.4" fill="var(--cherry)"/>
+    <circle cx="60" cy="136" r="2" fill="var(--gold)"/>
+    <circle cx="100" cy="136" r="2" fill="var(--cherry)"/>
+    <circle cx="118" cy="142" r="2.4" fill="var(--gold)"/>
+
+    <!-- candle -->
+    <rect x="77.5" y="108" width="5" height="24" rx="1.5" fill="var(--cream)" stroke="var(--cocoa)" stroke-opacity=".25" stroke-width="1"/>
+    <path id="smoke" d="M80,86 C76,78 84,72 80,64 C76,58 84,52 80,46" stroke="var(--cocoa)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path id="flame" class="cake-flame" d="M80,90 C75,100 76,108 80,108 C84,108 85,100 80,90 Z" fill="var(--gold)"/>
+  </svg>
+</button>
+
+<div class="breath-meter" aria-hidden="true">
+  <div class="breath-fill" id="breath-fill"></div>
+</div>
+
+<button class="next-btn" id="next-btn">Next →</button>
+<button class="relight-btn" id="relight-btn">Light it again</button>
+
+<script src="js/cat-cake.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The countdown is on</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/shared.css">
+<link rel="stylesheet" href="css/countdown.css">
+</head>
+<body>
+
+<nav class="candle-track" aria-label="Page 1 of 5">
+  <div class="candle active"><div class="flame"></div><div class="stick"></div></div>
+  <div class="candle"><div class="flame"></div><div class="stick"></div></div>
+  <div class="candle"><div class="flame"></div><div class="stick"></div></div>
+  <div class="candle"><div class="flame"></div><div class="stick"></div></div>
+  <div class="candle"><div class="flame"></div><div class="stick"></div></div>
+</nav>
+
+<div id="particles-layer" class="particles-layer" aria-hidden="true"></div>
+
+<div class="cake-wrap" aria-hidden="true">
+  <svg viewBox="0 0 160 150" width="120" height="112">
+    <ellipse cx="80" cy="128" rx="56" ry="7" fill="var(--frosting)" opacity="0.6"/>
+    <rect x="24" y="86" width="112" height="36" rx="10" fill="var(--cream)" stroke="var(--cocoa)" stroke-opacity="0.2" stroke-width="1.5"/>
+    <path d="M22,88 Q41,64 60,88 Q79,64 98,88 Q117,64 138,88 L138,100 L22,100 Z" fill="var(--frosting)" stroke="var(--cocoa)" stroke-opacity="0.15" stroke-width="1.5"/>
+    <circle cx="42" cy="82" r="2.4" fill="var(--cherry)"/>
+    <circle cx="60" cy="76" r="2" fill="var(--gold)"/>
+    <circle cx="80" cy="82" r="2.4" fill="var(--raspberry)"/>
+    <circle cx="100" cy="76" r="2" fill="var(--cherry)"/>
+    <circle cx="118" cy="82" r="2.4" fill="var(--gold)"/>
+    <rect x="47.5" y="46" width="5" height="20" rx="1.5" fill="var(--cream)" stroke="var(--cocoa)" stroke-opacity="0.25" stroke-width="1"/>
+    <rect x="76.5" y="42" width="5" height="24" rx="1.5" fill="var(--cream)" stroke="var(--cocoa)" stroke-opacity="0.25" stroke-width="1"/>
+    <rect x="105.5" y="46" width="5" height="20" rx="1.5" fill="var(--cream)" stroke="var(--cocoa)" stroke-opacity="0.25" stroke-width="1"/>
+    <path class="cake-flame f1" d="M50,32 C45,40 46,46 50,46 C54,46 55,40 50,32 Z" fill="var(--gold)"/>
+    <path class="cake-flame f2" d="M79,28 C74,36 75,42 79,42 C83,42 84,36 79,28 Z" fill="var(--gold)"/>
+    <path class="cake-flame f3" d="M108,32 C103,40 104,46 108,46 C112,46 113,40 108,32 Z" fill="var(--gold)"/>
+  </svg>
+</div>
+
+<div id="countdown-view">
+  <h1>Someone's birthday is coming...</h1>
+  <p class="subtitle">The countdown is on Loveeeeeeee.</p>
+  <div class="countdown">
+    <div class="unit"><div class="num" id="days">00</div><div class="label">Days</div></div>
+    <div class="unit"><div class="num" id="hours">00</div><div class="label">Hours</div></div>
+    <div class="unit"><div class="num" id="minutes">00</div><div class="label">Minutes</div></div>
+    <div class="unit"><div class="num" id="seconds">00</div><div class="label">Seconds</div></div>
+  </div>
+</div>
+
+<div class="start-wrap" id="start-wrap">
+  <h1>It's finally here!</h1>
+  <button class="start-btn" id="start-btn">Start →</button>
+</div>
+
+<script src="js/countdown.js"></script>
+</body>
+</html>

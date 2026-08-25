@@ -1,0 +1,62 @@
+ .poem-heading {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(18px, 4.5vw, 22px);
+    color: var(--cherry);
+    margin: 0 0 20px;
+  }
+
+  .poem-card {
+    background: var(--cream);
+    border: 1.5px solid var(--frosting);
+    border-radius: 20px;
+    box-shadow: 0 10px 26px rgba(74, 46, 42, 0.08);
+    padding: 30px 26px;
+    max-width: 460px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 32px;
+  }
+
+  .poem-text {
+    font-family: var(--font-hand);
+    font-weight: 600;
+    font-size: clamp(21px, 5.5vw, 27px);
+    line-height: 1.75;
+    color: var(--cocoa);
+    margin: 0;
+    min-height: 1.75em;
+  }
+  .poem-text.typing::after {
+    content: '|';
+    display: inline-block;
+    margin-left: 2px;
+    color: var(--cherry);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .poem-text.typing::after { animation: blink .9s steps(1) infinite; }
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .next-btn {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--cream);
+    background: var(--raspberry);
+    border: none;
+    border-radius: 999px;
+    padding: 16px 40px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(6px);
+    transition: opacity .6s ease, transform .3s ease;
+  }
+  .next-btn.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .next-btn:active { transform: scale(.96); }
+  .next-btn:focus-visible { outline: 3px solid var(--cherry); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) {
+    .next-btn { transition: opacity .3s ease; transform: none; }
+    .next-btn.visible { transform: none; }
+  }
